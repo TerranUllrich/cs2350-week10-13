@@ -12,9 +12,89 @@
   -->
 </head>
 
-<body>
+<body onload="draw()">
   <!-- Your HTML goes here -->
-  <h1>Welcome to CS 2350!</h1>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Terran Ullrich</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="/week10.html">Week 10</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled">Disabled</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid py-5 bg-dark text-light">
+      <h1 class="display-3 fw-bold">Custom bootstrap jumbotron</h1>
+      <p class="fs-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas aut tenetur hic atque accusamus sequi natus sed, dignissimos totam laudantium fugiat labore saepe ad modi perspiciatis obcaecati ipsa porro temporibus!</p>
+      <a class="btn btn-primary btn-lg" href="#">See more...</a>
+  </div>
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-9 d-flex flex-column">
+              <h2>Canvas</h2>
+              <canvas id="myCanvas" width="400" height="600" class="bg-light"></canvas>
+          </div>
+          <div class="col-3">
+            <div class="card my-3">
+                <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Generic office space">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <footer class="container-fluid bg-secondary text-info py-3 text-center">
+    &copy; All rights reserved
+  </footer>
+  <script>
+      let name1 = "John";
+      let name2 = "Jane";
 
+      for (let i = 0; i < 10; i++){
+        if (i % 2 == 0){
+          document.write("<h1>Hello " + name1 + "!</h1");
+        } else {
+          document.write("<h1>Welcome " + name2 + "!</h1>");
+        }
+      }
+
+      function draw(){
+          const cv = document.getElementById("myCanvas");
+          const ctx = cv.getContext("2d");
+
+          ctx.fillStyle = "red";
+          ctx.fillRect(300, 10, 100, 200);
+
+          ctx.strokeStyle = "blue";
+          ctx.beginPath();
+          ctx.moveTo(75, 50);
+          ctx.lineTo(100, 75);
+          ctx.lineTo(100, 25);
+          ctx.lineTo(125, 75);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(150, 150, 75, 0, 2 * Math.PI, true)
+          ctx.stroke();
+      }
+  </script>
 </body>
 </html>

@@ -5,3 +5,7 @@ require.context('../stylesheets/', true, /\.(css|scss)$/i)
 
 //TODO - Your ES6 JavaScript code (if any) goes here
 import 'bootstrap'
+import { addGuest } from './guestForm'
+
+console.log("Hello world!")
+document.querySelector("#guestForm").onsubmit = addGuest
