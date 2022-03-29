@@ -5,7 +5,16 @@ require.context('../stylesheets/', true, /\.(css|scss)$/i)
 
 //TODO - Your ES6 JavaScript code (if any) goes here
 import 'bootstrap'
-import { addGuest } from './guestForm'
+import { addGuest, loadGuests } from './guestForm'
+import { tictactoe } from './ticTacToe'
 
 console.log("Hello world!")
-document.querySelector("#guestForm").onsubmit = addGuest
+
+if (document.querySelector("#week10")) {
+    document.querySelector("#guestForm").onsubmit = addGuest
+    window.onload = loadGuests
+}
+
+if (document.querySelector("#week11")) {
+    window.onload = tictactoe
+}
