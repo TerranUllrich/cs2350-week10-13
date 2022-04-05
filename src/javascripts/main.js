@@ -7,6 +7,8 @@ require.context('../stylesheets/', true, /\.(css|scss)$/i)
 import 'bootstrap'
 import { addGuest, loadGuests } from './guestForm'
 import { tictactoe } from './ticTacToe'
+import { getGithubUsers, getTop10Movies } from './apiFunctions'
+import '../top10.dat'
 
 console.log("Hello world!")
 
@@ -17,4 +19,9 @@ if (document.querySelector("#week10")) {
 
 if (document.querySelector("#week11")) {
     window.onload = tictactoe
+}
+
+if (document.querySelector("#week12")) {
+    getGithubUsers()
+    getTop10Movies()
 }
